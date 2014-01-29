@@ -17,7 +17,7 @@ You may obtain a copy of the License at
 
 %{
 Desc
-    This is the core function that estimates a classifier (w, b) using the EM algorithm.
+    This is the core function that estimates a classifier (w, b) using the EMBLEM algorithm.
 
 Input
     Xl: labeled examples
@@ -30,9 +30,9 @@ Input
     c: overrelaxation parameter. 0 <= c <= 1, or c = -1 means "use c = 1 first, get convergence, then use c = 0".
        We used c = -1.
     use_pcg: 1 = use pcg to solve least-squares problems, 0 = use matrix inversion
-    use_fn_handle: 1 = use function handle to avoid computing the matrix A in pcg. 2 = precompute the matrix A.
+    use_fn_handle: 1 = use function handle to avoid computing the matrix A in pcg. 0 = precompute the matrix A.
     pcg_tol: tolerance for pcg. We used pcg_tol = 1e-6.
-    em_tol: tolerance for convergence of EM algorithm. We used em_tol = 1e-4.
+    em_tol: tolerance for convergence of the EM algorithm. We used em_tol = 1e-4.
     print_status: 1 = print status at each iteration, 0 = do not print
     mean_upper_bound: upper bound on the mean of labels for the unlabeled examples (used for EMBLEM_{ss}^{bal})
     mean_lower_bound: lower bound ...
