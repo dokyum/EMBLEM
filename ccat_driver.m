@@ -31,8 +31,6 @@ Input
 
 function [] = ccat_driver(split, count_labeled, assumption, lambda, c, use_pcg, use_fn_handle, pcg_tol, em_tol, print_status, interval, use_precond)
 
-addpath('/home/dok027/liblinear/liblinear-1.93/matlab');
-
 fprintf('=============================================================\n');
 fprintf('split: %d\n', split);
 fprintf('count_labeled: %d\n', count_labeled);

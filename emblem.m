@@ -198,19 +198,6 @@ for iter=1:maxIter
         fprintf('  actual_c        = %f\n',last_actual_c);
         fprintf('  norm(w)^2       = %f\n',w'*w);
         fprintf('  mean_yu         = %f\n',mean(sign(Xu'*w+b)));
-        if assumption == 2
-            mean_star = mean(intermediate_mean_y);
-            var_star = sum(intermediate_var_y) / Usqr;
-            std_star = sqrt(var_star);
-
-            fprintf('    log_prob_star      = %e\n',log_prob_star);
-            fprintf('    mean_star          = %f\n',mean_star);
-            fprintf('    std_star           = %e\n',std_star);
-            fprintf('    arg_star_L         = %f\n',arg_star_L);
-            fprintf('    arg_star_U         = %f\n',arg_star_U);
-            fprintf('    max(abs((delta_u)) = %e\n',max(abs(delta_u)));
-            fprintf('    mean(delta_u)      = %e\n',mean(delta_u));
-        end
     end
     
     % converged?
