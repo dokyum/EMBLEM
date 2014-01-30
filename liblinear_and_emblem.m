@@ -19,6 +19,7 @@ You may obtain a copy of the License at
 Desc
     This function intializes a classifier (w, b) using liblinear and then executes the function emblem.
     For description of arguments, please read emblem.m.
+    This function requires MATLAB interface to LIBLINEAR.
 %}
 
 
