@@ -148,8 +148,8 @@ for iter=1:maxIter
         derivative_prob_pos = sqrt1over2pi * exp(-power(arg_pos, 2));
         derivative_prob_neg = -sqrt1over2pi * exp(-power(arg_neg, 2));
         derivative_intermediate_mean = 2 * (rho_neg .* derivative_prob_pos - rho_pos .* derivative_prob_neg) ./ prob_sum;
-        derivative_arg_star_U = derivative_intermediate_mean * (arg_star_U - Uoversqrt2) / intermediate_var_y_sum_sqrt / U;
-        derivative_arg_star_L = derivative_intermediate_mean * (arg_star_L - Uoversqrt2) / intermediate_var_y_sum_sqrt / U;
+        derivative_arg_star_U = derivative_intermediate_mean / intermediate_var_y_sum .* (arg_star_U * intermediate_mean_y - intermediate_var_y_sum_sqrt / sqrt2);
+        derivative_arg_star_L = derivative_intermediate_mean / intermediate_var_y_sum .* (arg_star_L * intermediate_mean_y - intermediate_var_y_sum_sqrt / sqrt2);
 
         prob_star = (erf(arg_star_U) - erf(arg_star_L)) / 2;
 
